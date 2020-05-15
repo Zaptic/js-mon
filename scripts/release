@@ -1,0 +1,22 @@
+#!/bin/bash -e
+
+VERSION=$1
+if [[ -z $1 ]]; then
+    echo "Usage: release [major | minor | patch]"
+    exit 1
+fi
+
+echo "Compiling..."
+rm -rf dist/
+npm run tsc
+
+echo "Checking release..."
+npm run prettier -l
+npm run lint
+npm test
+
+echo "Publishing release..."
+npm version "$VERSION"
+
+npm publish --access public
+git push

@@ -1,0 +1,44 @@
+{
+    "name": "js-mon",
+    "version": "0.0.1",
+    "description": "Result and maybe monads for js",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "author": "Zaptic",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Zaptic/js-mon"
+    },
+    "scripts": {
+        "lint": "eslint . --ext .ts",
+        "prettier": "prettier --config prettier.config.js '**' --write",
+        "release": "./scripts/release",
+        "test": "mocha --colors --require source-map-support/register --ui bdd $(find dist/ -name '*.js' -path '*/*.test.js')",
+        "tsc": "tsc"
+    },
+    "devDependencies": {
+        "@types/chai": "^4.2.11",
+        "@types/chai-as-promised": "^7.1.2",
+        "@types/lodash.memoize": "^4.1.6",
+        "@types/lodash.omit": "^4.5.6",
+        "@types/lodash.pick": "^4.4.6",
+        "@types/mocha": "^7.0.2",
+        "@typescript-eslint/eslint-plugin": "^2.33.0",
+        "@typescript-eslint/parser": "^2.33.0",
+        "chai": "^4.2.0",
+        "chai-as-promised": "^7.1.1",
+        "eslint": "^7.0.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-prettier": "^3.1.3",
+        "mocha": "^7.1.2",
+        "prettier": "^2.0.5",
+        "source-map-support": "^0.5.19",
+        "typescript": "^3.9.2"
+    },
+    "dependencies": {
+        "lodash.memoize": "^4.1.2",
+        "lodash.omit": "^4.5.0",
+        "lodash.pick": "^4.4.0"
+    }
+}
